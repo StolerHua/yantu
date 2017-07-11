@@ -19,5 +19,5 @@ urlpatterns = [
     url(r'^', include('online.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^online/', include('online.urls')),
-
+    url(r'^blog/',include('blog.urls'))
 ]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章发布系统</title>
+</head>
+<body>
+<h1>文章发布系统</h1>
+{% csrf_token %}
+<a href="{% url 'mytitle'  %}">我的文章</a>
+
+<form method = 'post'>
+    {% csrf_token %}
+    Title:<input type="text" name="tiltlename"/>
+    <br>
+    content:<input type="text" name="tiltlecontent"/>
+    <br>
+    <input type="submit" value = "add" />
+</form>
+
+</body>
+</html>

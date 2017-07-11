@@ -22,7 +22,7 @@ def regist(req):
             password = uf.cleaned_data['password']
             #添加到数据库
             User.objects.create(username= username,password=password)
-            return HttpResponse('regist success!!')
+            return HttpResponseRedirect('/online/login/')
     else:
         uf = UserForm()
     return render(req,'regist.html',{'uf':uf})
@@ -55,7 +55,7 @@ def login(req):
 #登陆成功
 def index(req):
     username = req.COOKIES.get('username','')
-    return render(req,'index.html' ,{'username':username})
+    return render(req,'blog.html' ,{'username':username})
 
 #退出
 def logout(req):
