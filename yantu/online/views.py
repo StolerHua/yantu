@@ -4,7 +4,7 @@ from django.shortcuts import render
 #coding=utf-8
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
-from django.template import RequestContext
+from django.template import Context
 from django import forms
 from online.models import User
 #表单
@@ -25,7 +25,7 @@ def regist(req):
             return HttpResponse('regist success!!')
     else:
         uf = UserForm()
-    return render_to_response('regist.html',{'uf':uf},RequestContext(req))
+    return render(req,'regist.html',{'uf':uf})
 
 #登陆
 def login(req):
@@ -50,12 +50,12 @@ def login(req):
     #     return HttpResponseRedirect('/online/login/')
     else:
         uf = UserForm()
-    return render_to_response('login.html',{'uf':uf},RequestContext(req))
+        return render(req, 'login.html', {'uf': uf})
 
 #登陆成功
 def index(req):
     username = req.COOKIES.get('username','')
-    return render_to_response('index.html' ,{'username':username})
+    return render(req,'index.html' ,{'username':username})
 
 #退出
 def logout(req):
