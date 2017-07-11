@@ -1,5 +1,5 @@
 from django.conf.urls import  url
-from online import views
+from yantu.online import views
 
 urlpatterns = (
                url(r'^$', views.login, name='login'),

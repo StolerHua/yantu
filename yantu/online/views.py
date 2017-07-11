@@ -6,7 +6,7 @@ from django.shortcuts import render,render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import RequestContext
 from django import forms
-from online.models import User
+from yantu.online.models import User
 #表单
 class UserForm(forms.Form):
     username = forms.CharField(label='用户名',max_length=100)
